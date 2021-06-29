@@ -8,7 +8,7 @@ function get_pwd($user)
 
     //CONNESSIONE AL DB
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
-    $sql = "SELECT password FROM account WHERE email=$1;";
+    $sql = "SELECT password FROM iscrizioni WHERE email=$1;";
     $prep = pg_prepare($db, "sqlPassword", $sql);
     $ret = pg_execute($db, "sqlPassword", array($user));
     if (!$ret) {
@@ -32,7 +32,7 @@ if ($_POST['email'] && $_POST['password']) {
     //se email esiste nel DB. Se esiste, restituisce la password (hash), altrimenti restituisce false.
     $hash = get_pwd($user);
     if (!$hash) {
-        echo "<p> L'utente $user non esiste. <a href=\"login.html\">Riprova</a></p>";
+        echo "<p> L'utente $user non esiste. <a href=\"login.php\">Riprova</a></p>";
     } else {
         if (password_verify($pass, $hash)) {
             echo "<p>Login Eseguito con successo</p>";
@@ -41,10 +41,10 @@ if ($_POST['email'] && $_POST['password']) {
             $_SESSION['email'] = $user;
             echo "<p><a href=\"reserved.php\">Accedi</a> al contenuto riservato solo agli utenti registrati<p>";
         } else {
-            echo 'Email o password errati. <a href="login.html">Riprova</a>';
+            echo 'Email o password errati. <a href="login.php">Riprova</a>';
         }
     }
 } else {
-    echo "<p>ERRORE: email o password non inseriti <a href=\"login.html\">Riprova</a></p>";
+    echo "<p>ERRORE: email o password non inseriti <a href=\"login.php\">Riprova</a></p>";
     exit();
 }

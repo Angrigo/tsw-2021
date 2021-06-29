@@ -9,6 +9,6 @@
 		setcookie($sname,'', time()-3600,'/');
 	}
 	echo "<p> Logout effettuato. Ciao ".$_SESSION["email"]." </p>";
-	echo "<p>Torna alla <a href=\"login.html\">Home</a></p>";
+	echo "<p>Torna alla <a href=\"login.php\">Home</a></p>";
 
 ?>

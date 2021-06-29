@@ -32,7 +32,7 @@ if (!empty($pass)) {
         } else {
             //ORA posso inserire il nuovo utente nel db
             if (insert_utente($nome, $email, $pass)) {
-                echo "<p> Utente registrato con successo. Effettua il <a href=\"login.html\">login</a></p>";
+                echo "<p> Utente registrato con successo. Effettua il <a href=\"login.php\">login</a></p>";
             } else {
                 echo "<p> Errore durante la registrazione. Riprova</p>";
             }
@@ -53,7 +53,7 @@ if (!empty($pass)) {
     </p>
     <p>
         <label for="email">Email
-            <input type="text" name="email" id="email" value="<?php echo $user ?>" />
+            <input type="text" name="email" id="email" value="<?php echo $email ?>" />
         </label>
     </p>
     <p>
@@ -78,7 +78,7 @@ function email_exist($email)
     //CONNESSIONE AL DB
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
     //echo "Connessione al database riuscita<br/>"; 
-    $sql = "SELECT email FROM account WHERE email=$1";
+    $sql = "SELECT email FROM iscrizioni WHERE email=$1";
     $prep = pg_prepare($db, "sqlEmail", $sql);
     $ret = pg_execute($db, "sqlEmail", array($email));
     if (!$ret) {
@@ -100,7 +100,7 @@ function insert_utente($nome, $email, $pass)
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
     //echo "Connessione al database riuscita<br/>"; 
     $hash = password_hash($pass, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO ACCOUNT(nome, email, password) VALUES($1, $2, $3)";
+    $sql = "INSERT INTO iscrizioni(nome, email, password) VALUES($1, $2, $3)";
     $prep = pg_prepare($db, "insertEmail", $sql);
     $ret = pg_execute($db, "insertEmail", array($nome, $email, $hash));
     if (!$ret) {

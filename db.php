@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $port = '5432';
-$db = 'myfootballblog';
+$db = 'TSW';
 $username = 'www';
 $password = 'tsw2021';
 
