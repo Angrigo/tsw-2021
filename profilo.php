@@ -77,7 +77,7 @@ if(isset($_FILES) && isset($_FILES['profilepic'])){
             </form>
         </div>
         <div class="column_right">
-            <h2> Foto utente </h2>
+            <h2> Immagine utente </h2>
             <img id="profileimg" src="./static/users/<?php echo $id ?>.png"  />
         </div>
 
