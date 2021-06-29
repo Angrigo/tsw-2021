@@ -16,10 +16,24 @@ function validaModulo(nomeModulo) {
         return false;
     }
     if (nomeModulo.repassword.value == "") {
-        alert("Inserire la ripetizione di password!");
+        alert("Inserire la riconferma della password!");
         nomeModulo.password.focus();
         return false;
     }
+    
+    /*
+    if (strlen(nomeModulo.password.value) < '6') {
+        alert("La password deve avere almeno 6 caratteri!");
+        nomeModulo.password.focus();
+        return false;
+    }
+
+    if (strlen(nomeModulo.repassword.value) < '6') {
+        alert("La riconferma della password deve avere almeno 6 caratteri!");
+        nomeModulo.password.focus();
+        return false;
+    }
+    */
 
     if (nomeModulo.repassword.value != nomeModulo.password.value) {
         alert("Le password non coincidono!");

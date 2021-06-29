@@ -67,6 +67,10 @@ img {
     min-height: 100vh;
 }
 
+h2 {
+    text-decoration: underline;
+}
+
 .column_left {
     width: 20%;
     background-color: lightcyan;
@@ -77,6 +81,10 @@ img {
     width: 60%;
     background-color: lightcyan;
     padding: 15px;
+}
+
+#intro_text {
+    font-style: italic;
 }
 
 .column_right {
