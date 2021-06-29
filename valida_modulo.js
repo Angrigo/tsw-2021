@@ -21,7 +21,7 @@ function validaModulo(nomeModulo) {
         return false;
     }
     
-    
+    /*
     if (strlen(nomeModulo.password.value) < 6) {
         alert("La password deve avere almeno 6 caratteri!");
         nomeModulo.password.focus();
@@ -33,6 +33,7 @@ function validaModulo(nomeModulo) {
         nomeModulo.password.focus();
         return false;
     }
+    */
     
 
     if (nomeModulo.repassword.value != nomeModulo.password.value) {
