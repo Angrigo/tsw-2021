@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(48, 165, 194);
+    background-color: LightSkyBlue;
 }
 
 #sitelogo {
@@ -30,7 +30,7 @@ body {
         border-radius: 15px;
         position: absolute;
         left: 20px;
-        top: 10px;
+        top: 0px;
     }
     .menu {
         text-align: center;
@@ -77,7 +77,22 @@ body {
 }
 
 .footer {
-    background-color: red;
+    background-color: LightSkyBlue;
     text-align: center;
     padding: 5px;
+}
+
+#privacy {
+    text-decoration: none;
+    color: black;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }

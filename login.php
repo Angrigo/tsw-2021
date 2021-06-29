@@ -16,7 +16,7 @@
             <form method="post" action="login_manager.php">
                 <p>
                     <label for="email">Email
-                        <input type="text" name="email" id="email" />
+                        <input type="email" name="email" id="email" />
                     </label>
                 </p>
                 <p>

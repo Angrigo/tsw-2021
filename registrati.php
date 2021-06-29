@@ -13,25 +13,25 @@
             <p>
             <h3>Registrazione</h3>
             </p>
-            <form method="post" action="registrati.php">
+            <form method="post" action="registrati_manager.php">
                 <p>
-                    <label for="firstname">Nome
-                        <input type="text" name="firstname" id="firstname" />
-                    </label>
-                </p>
-                <p>
-                    <label for="lastname">Cognome
-                        <input type="text" name="lastname" id="lastname" />
+                    <label for="name">Nome
+                        <input type="text" name="nome" id="nome" />
                     </label>
                 </p>
                 <p>
                     <label for="email">Email
-                        <input type="text" name="email" id="email" />
+                        <input type="email" name="email" id="email" />
                     </label>
                 </p>
                 <p>
                     <label for="password">Password
                         <input type="password" name="password" id="password" />
+                    </label>
+                </p>
+                <p>
+                    <label for="repassword">Repassword
+                        <input type="password" name="repassword" id="repassword" />
                     </label>
                 </p>
                 <p>

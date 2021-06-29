@@ -1,8 +1,11 @@
 <?php
 
+
+
 function get_pwd($user)
 {
     require "db.php";
+
     //CONNESSIONE AL DB
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
     $sql = "SELECT password FROM account WHERE email=$1;";

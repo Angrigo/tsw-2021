@@ -3,15 +3,16 @@ if (isset($_POST['nome']))
     $nome = $_POST['nome'];
 else
     $nome = "";
-if (isset($_POST['username']))
-    $user = $_POST['username'];
+
+if (isset($_POST['email']))
+    $email = $_POST['email'];
 else
-    $user = "";
+    $email = "";
 if (isset($_POST['password']))
     $pass = $_POST['password'];
 else
     $pass = "";
-if (isset($_POST['repassword']))
+    if (isset($_POST['repassword']))
     $repassword = $_POST['repassword'];
 else
     $repassword = "";
@@ -26,11 +27,11 @@ if (!empty($pass)) {
         //....
 
         //CONTROLLO SE L'UTENTE GIA' ESISTE
-        if (username_exist($user)) {
-            echo "<p> Username $user già esistente. Riprova</p>";
+        if (email_exist($email)) {
+            echo "<p> Email $email già esistente. Riprova</p>";
         } else {
             //ORA posso inserire il nuovo utente nel db
-            if (insert_utente($nome, $user, $pass)) {
+            if (insert_utente($nome, $email, $pass)) {
                 echo "<p> Utente registrato con successo. Effettua il <a href=\"login.html\">login</a></p>";
             } else {
                 echo "<p> Errore durante la registrazione. Riprova</p>";
@@ -51,8 +52,8 @@ if (!empty($pass)) {
         </label>
     </p>
     <p>
-        <label for="username">Username
-            <input type="text" name="username" id="username" value="<?php echo $user ?>" />
+        <label for="email">Email
+            <input type="text" name="email" id="email" value="<?php echo $user ?>" />
         </label>
     </p>
     <p>
@@ -71,15 +72,15 @@ if (!empty($pass)) {
 </form>
 
 <?php
-function username_exist($user)
+function email_exist($email)
 {
     require "./db.php";
     //CONNESSIONE AL DB
-    $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
+    $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
     //echo "Connessione al database riuscita<br/>"; 
-    $sql = "SELECT username FROM account WHERE username=$1";
-    $prep = pg_prepare($db, "sqlUsername", $sql);
-    $ret = pg_execute($db, "sqlUsername", array($user));
+    $sql = "SELECT email FROM account WHERE email=$1";
+    $prep = pg_prepare($db, "sqlEmail", $sql);
+    $ret = pg_execute($db, "sqlEmail", array($email));
     if (!$ret) {
         echo "ERRORE QUERY: " . pg_last_error($db);
         return false;
@@ -92,16 +93,16 @@ function username_exist($user)
     }
 }
 
-function insert_utente($nome, $user, $pass)
+function insert_utente($nome, $email, $pass)
 {
     require "./db.php";
     //CONNESSIONE AL DB
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
     //echo "Connessione al database riuscita<br/>"; 
     $hash = password_hash($pass, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO ACCOUNT(nome, username, password) VALUES($1, $2, $3)";
-    $prep = pg_prepare($db, "insertUser", $sql);
-    $ret = pg_execute($db, "insertUser", array($nome, $user, $hash));
+    $sql = "INSERT INTO ACCOUNT(nome, email, password) VALUES($1, $2, $3)";
+    $prep = pg_prepare($db, "insertEmail", $sql);
+    $ret = pg_execute($db, "insertEmail", array($nome, $email, $hash));
     if (!$ret) {
         echo "ERRORE QUERY: " . pg_last_error($db);
         return false;

@@ -1,3 +1,5 @@
+<?php include("check_reserved.php"); ?>
+
 <!DOCTYPE html>
 <html>
 
