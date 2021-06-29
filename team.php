@@ -10,7 +10,9 @@
             <h2>Il nostro team</h2>
         </div>
         <div class="column_middle">
-            <p>Il nostro team è formato da Ores Angione e altri 3 stronzi</p>
+            <p>Il nostro team è formato da 4 appassionati del giuoco Calcio. </br>
+            In particolare siamo tutti tifosi dell'<strong>AC MILAN!!</strong> 
+            </p>
         </div>
         <div class="column_right">
 

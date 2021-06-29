@@ -1,7 +1,56 @@
+<?php
+if(!isset($_SESSION)) 
+    session_start();
+$id = 0;
+$output = "";
+$nome = "";
+$email = "";
+
+require "db.php";
+//CONNESSIONE AL DB
+$db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
+$sql = "SELECT id, nome, email, data_creazione FROM iscrizioni WHERE email=$1 LIMIT 1;";
+$prep = pg_prepare($db, "sqlPassword", $sql);
+$ret = pg_execute($db, "sqlPassword", array($_SESSION["email"]));
+if (!$ret) {
+    echo "ERRORE QUERY: " . pg_last_error($db);
+    return false;
+} else {
+    if ($row = pg_fetch_assoc($ret)) {
+        if($row && $row["email"]) { //l'utente esiste
+            $id = $row['id'];
+            $nome = $row['nome'];
+            $email = $row['email'];
+            $data_creazione = $row['data_creazione'];
+        } else {
+            $output = "Utente non trovato.";
+        }
+    }
+}
+
+if(isset($_FILES) && isset($_FILES['profilepic'])){
+    if(is_uploaded_file($_FILES['profilepic']['tmp_name'])){
+        $info = pathinfo($_FILES['profilepic']['name']);
+        $target_dir = "static/users/";
+        $target_file = $target_dir . $id;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        // Check if image file is a actual image or fake image
+        $check = getimagesize($_FILES["profilepic"]["tmp_name"]);
+        if($check !== false) {
+            move_uploaded_file($_FILES["profilepic"]["tmp_name"], $target_file .".png");
+        }
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
 <?php include("head.php"); ?>
+
+
 
 <body>
     <?php include("header.php"); ?>
@@ -10,13 +59,26 @@
             <h2> Profilo utente </h2>
         </div>
         <div class="column_middle">
-            <p>Nome </p>
-            <p>Cognome </p>
-            <p>Email </p>
-            <p>Data iscrizione </p>
+        <h2> Dati utente </h2>
+        <?php if($output == "") { ?>
+
+            <p>Nome: <?php echo $nome ?></p>
+            <p>Email: <?php echo $email ?></p>
+            <p>Data iscrizione: <?php echo $data_creazione ?></p>
+            <?php } else { ?>
+            <p><?php echo $output ?></p>
+            <?php } ?>
+            
+            <br>
+            <form method="post" action="profilo.php" enctype='multipart/form-data'>
+                <label for="profilepic">Scegli immagine profilo:</label>
+                <input type="file" id="profilepic" name="profilepic" accept="image/png" />
+                <button type=submit>Salva immagine</button>
+            </form>
         </div>
         <div class="column_right">
-
+            <h2> Foto utente </h2>
+            <img id="profileimg" src="./static/users/<?php echo $id ?>.png"  />
         </div>
 
     </div>

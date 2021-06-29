@@ -23,7 +23,7 @@ else
 //CHECK PASSWORD
 if (!empty($pass)) {
     if ($pass != $repassword) {
-        $output = "Hai sbagliato a digitare la password. Riprova.";
+        $output = "Hai sbagliato a digitare la password. <a href='registrati.php'>Riprova!</a>";
         $pass = "";
     } else {
         //ANDREBBERO INSERITI ANCHE I CONTROLLI DEGLI ALTRI VALORI OBBLIGATORI
@@ -31,7 +31,7 @@ if (!empty($pass)) {
 
         //CONTROLLO SE L'UTENTE GIA' ESISTE
         if (email_exist($email)) {
-            $output = "Email $email già esistente. Riprova.";
+            $output = "Email $email già esistente. <a href=\"registrati.php\">Riprova</a>";
         } else {
             //ORA posso inserire il nuovo utente nel db
             if (insert_utente($nome, $email, $pass)) {
@@ -65,8 +65,8 @@ if (!empty($pass)) {
             <?php if($output == "") { ?>
             <form method="post" action="registrati.php" onSubmit="return validaModulo(this);">
                 <p>
-                    <label for="name">Nome
-                        <input type="text" name="nome" id="nome" />
+                    <label for="nome">Nome
+                        <input type="text" name="nome" id="nome"/>
                     </label>
                 </p>
                 <p>
@@ -76,12 +76,12 @@ if (!empty($pass)) {
                 </p>
                 <p>
                     <label for="password">Password
-                        <input type="password" name="password" id="password" />
+                        <input type="password" name="password" id="password" placeholder="Min. 6 characters"/>
                     </label>
                 </p>
                 <p>
                     <label for="repassword">Repassword
-                        <input type="password" name="repassword" id="repassword" />
+                        <input type="password" name="repassword" id="repassword" placeholder="Min. 6 characters"/>
                     </label>
                 </p>
                 <p>
@@ -133,7 +133,7 @@ function insert_utente($nome, $email, $pass)
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
     //echo "Connessione al database riuscita<br/>"; 
     $hash = password_hash($pass, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO iscrizioni(nome, email, password) VALUES($1, $2, $3)";
+    $sql = "INSERT INTO iscrizioni(id, nome, email, password) VALUES(DEFAULT, $1, $2, $3)";
     $prep = pg_prepare($db, "insertEmail", $sql);
     $ret = pg_execute($db, "insertEmail", array($nome, $email, $hash));
     if (!$ret) {
