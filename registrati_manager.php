@@ -32,7 +32,7 @@ if (!empty($pass)) {
         } else {
             //ORA posso inserire il nuovo utente nel db
             if (insert_utente($nome, $email, $pass)) {
-                echo "<p> Utente registrato con successo. Effettua il <a href=\"login.php\">login</a></p>";
+                echo "<p> Utente registrato con successo</p>";
             } else {
                 echo "<p> Errore durante la registrazione. Riprova</p>";
             }
@@ -41,11 +41,22 @@ if (!empty($pass)) {
 }
 
 ?>
+<!DOCTYPE html>
+<html>
 
-<p>
-<h3>Registrati</h3>
-</p>
-<form method="post" action="registrati.php">
+<?php include("head.php"); ?>
+
+<body>
+    <?php include("header.php"); ?>
+    <div class="content">
+        <div class="column_left">
+            <h2> Registrati </h2>
+        </div>
+        <div class="column_middle">
+    <p>
+    <h3>Registrati</h3>
+    </p>
+    <form method="post" action="registrati.php">
     <p>
         <label for="nome">Nome
             <input type="text" name="nome" id="nome" value="<?php echo $nome ?>" />
@@ -70,6 +81,14 @@ if (!empty($pass)) {
         <input type="submit" name="registra" value="Registrati" />
     </p>
 </form>
+</div>
+<div class="column_right">
+
+</div>
+    </div>
+    <?php include("footer.html"); ?>
+</body>
+</html>
 
 <?php
 function email_exist($email)
