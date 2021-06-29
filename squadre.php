@@ -23,13 +23,6 @@
             <img id="logodortmund" src="./assets/images/dortmund.png" alt="logo dortmund" width="84" height="84"/>
             <h3>Ligue 1</h3>
             <img id="logolille" src="./assets/images/lille.png" alt="logo lille" width="84" height="84"/>
-
-
-
-
-
-
-            <br>
         </div>  
             <div class="column_right">
 
