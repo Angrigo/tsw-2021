@@ -21,19 +21,19 @@ function validaModulo(nomeModulo) {
         return false;
     }
     
-    /*
-    if (strlen(nomeModulo.password.value) < '6') {
+    
+    if (strlen(nomeModulo.password.value) < 6) {
         alert("La password deve avere almeno 6 caratteri!");
         nomeModulo.password.focus();
         return false;
     }
 
-    if (strlen(nomeModulo.repassword.value) < '6') {
+    if (strlen(nomeModulo.repassword.value) < 6) {
         alert("La riconferma della password deve avere almeno 6 caratteri!");
         nomeModulo.password.focus();
         return false;
     }
-    */
+    
 
     if (nomeModulo.repassword.value != nomeModulo.password.value) {
         alert("Le password non coincidono!");

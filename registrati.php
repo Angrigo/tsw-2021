@@ -59,10 +59,10 @@ if (!empty($pass)) {
             <h2> Registrati </h2>
         </div>
         <div class="column_middle">
+            <?php if($output == "") { ?>
             <p>
             <h3>Registrazione</h3>
             </p>
-            <?php if($output == "") { ?>
             <form method="post" action="registrati.php" onSubmit="return validaModulo(this);">
                 <p>
                     <label for="nome">Nome
@@ -90,25 +90,24 @@ if (!empty($pass)) {
             </form>
             <p> Sei gi&agrave; registrato? <a href="login.php">Effettua il login!</a></p>
             <?php } else { ?>
-            <p>
-                <?php echo $output ?>
-                <?php
-			        foreach ($_POST as $key => $value){
-				        $$key = $value;
-			        }
-		        ?>
-		        <?php
-				    echo "<h3> Dati recuperati dal form </h3>";
-		        ?>
-		        <fieldset>
-			        <legend> Account </legend>
-			        <p> Nome: <?php echo $nome; ?> </p>
-                    <p> E-mail: <?php echo $email; ?> </p>
-			        <p> Password: <?php echo $password; ?> </p>
-		        </fieldset>
-		        <?php
-			        }
-		        ?>
+            <p><?php echo $output ?></p>
+            <?php
+			    foreach ($_POST as $key => $value){
+				    $$key = $value;
+			    }
+		    ?>
+		    <?php
+				echo "<h3> Dati recuperati dal form </h3>";
+		    ?>
+		     <fieldset>
+			    <legend> Account </legend>
+			    <p> Nome: <?php echo $nome; ?> </p>
+                <p> E-mail: <?php echo $email; ?> </p>
+			    <p> Password: <?php echo $password; ?> </p>
+		    </fieldset>
+		    <?php
+			    }
+		    ?>
         </div>
         <div class="column_right">
 
