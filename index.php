@@ -7,8 +7,8 @@
     <?php include("header.php"); ?>
     <div class="content">
         <div class="column_left">
-            <img class="home-img fadeIn" id="rete" src="./assets/images/rete.png" width="300" height="350"/>
-            <img class="home-img fadeIn" id="rovesciata" src="./assets/images/rovesciata.png" width="300" height="350"/>
+            <img class="home-img fadeIn" id="pallone" src="./assets/images/pallone.png" width="300" height="350"/>
+            <img class="home-img fadeIn" id="stadio" src="./assets/images/stadio.png" width="300" height="350"/>
         </div>
         <div class="column_middle">
             <h2> Contenuti </h2>
@@ -24,7 +24,7 @@
         </div>
         <div class="column_right">
             <img class="home-img fadeIn" id="dios" src="./assets/images/dios.png" width="300" height="350"/>
-            <img class="home-img fadeIn" id="pallone" src="./assets/images/pallone.png" width="300" height="350"/>
+            <img class="home-img fadeIn" id="tacco" src="./assets/images/tacco.png" width="300" height="350"/>
         </div>
     </div>
     <?php include("footer.html"); ?>
