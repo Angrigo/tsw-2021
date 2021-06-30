@@ -70,7 +70,7 @@ if (!empty($pass)) {
                 <input type="email" name="email" id="email" />
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Min. 6 characters"/>
-                <label for="repassword">Ripeti passw</label>
+                <label for="repassword">Ripeti password</label>
                 <input type="password" name="repassword" id="repassword" placeholder="Min. 6 characters"/>
                 <button type="submit" name="invia">Registrati</button>
             </form>
