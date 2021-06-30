@@ -8,7 +8,7 @@
     <div class="content">
         <div class="column_left">
             <img class="home-img fadeIn" id="pallone" src="./assets/images/pallone.png" width="300" height="350"/>
-            <img class="home-img fadeIn" id="stadio" src="./assets/images/stadio.png" width="300" height="350"/>
+            <img class="home-img fadeIn" id="scontro" src="./assets/images/scontro.png" width="300" height="350"/>
         </div>
         <div class="column_middle">
             <h2> Contenuti </h2>
@@ -23,8 +23,8 @@
             <iframe id="videoeuro2020" width="100%" height="400" src="https://www.youtube.com/embed/JjIwYtLr8Ec?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="column_right">
-            <img class="home-img fadeIn" id="dios" src="./assets/images/dios.png" width="300" height="350"/>
-            <img class="home-img fadeIn" id="tacco" src="./assets/images/tacco.png" width="300" height="350"/>
+            <img class="home-img fadeIn" id="tiro" src="./assets/images/tiro.png" width="300" height="350"/>
+            <img class="home-img fadeIn" id="stadio" src="./assets/images/stadio.png" width="300" height="350"/>
         </div>
     </div>
     <?php include("footer.html"); ?>
