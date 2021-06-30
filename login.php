@@ -76,9 +76,13 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
                     </label>
                 </p>
                 <p>
-                    <input type="submit" name="invia" value="Login" />
+                    <input id="bottonelogin" type="submit" name="invia" value="Login" />
                 </p>
-            </form>
+                <input type="checkbox" id='checkbox' name="remember" id ="remember"   /> 
+                              <label for="remember"> Rimani Connesso </label>
+                    
+            </form> <!-- ALLINEARE IL BOX CON LA SCRITTA RIMANI CONNESSO! -->
+
             <p>Nuovo utente? <a href="registrati.php">Registrati!</a></p>
             <?php } else { ?>
             <p><?php echo $output ?></p>
