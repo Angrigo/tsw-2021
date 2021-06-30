@@ -15,10 +15,6 @@ body {
     border-radius: 15px;
 }
 
-img {
-    cursor: pointer;
-}
-
 #rete, #stadio, #rovesciata, #pallone{
     margin-top: 30px;
 }
@@ -71,6 +67,8 @@ h2 {
     text-decoration: underline;
 }
 
+
+
 .column_left {
     width: 20%;
     background-color: lightcyan;
@@ -81,10 +79,6 @@ h2 {
     width: 60%;
     background-color: lightcyan;
     padding: 15px;
-}
-
-#intro_text {
-    font-style: italic;
 }
 
 .column_right {
@@ -117,6 +111,7 @@ input, select {
 #intro_text {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: large;
+    font-style: italic;
 }
 
 #profileimg {
@@ -125,3 +120,62 @@ input, select {
     width: 100%;
     border-radius: 10px;
 }
+
+.home-img {
+    border-radius: 5px;
+}
+
+.fadeIn {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 3s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.logo {
+    cursor: pointer;
+    width: auto;
+    height: 100px;
+}
+
+.card-squadra {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+}
+.card-squadra p {
+    font-weight: bold;
+    text-align: center;
+}
+.card-squadra img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.card-squadra:hover {
+    background-color: rgb(25, 206, 230);
+}
+
+#terms {
+    
+}
+/*
+#videoeuro2020{
+    padding-top: 100px;
+}
+*/

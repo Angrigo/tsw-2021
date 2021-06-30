@@ -39,7 +39,8 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
             //Se il login è corretto, inizializziamo la sessione
             session_start();
             $_SESSION['email'] = $user;
-            $output =  "<a href=\"reserved.php\">Accedi</a> al contenuto riservato solo agli utenti registrati.";
+            //$output =  "<a href=\"reserved.php\">Accedi</a> al contenuto riservato solo agli utenti registrati.";
+            header("Location: profilo.php");
         } else {
             $output = 'Email o password errati. <a href="login.php">Riprova</a>';
         }

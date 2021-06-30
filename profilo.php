@@ -30,15 +30,12 @@ if (!$ret) {
 
 if(isset($_FILES) && isset($_FILES['profilepic'])){
     if(is_uploaded_file($_FILES['profilepic']['tmp_name'])){
-        $info = pathinfo($_FILES['profilepic']['name']);
-        $target_dir = "static/users/";
-        $target_file = $target_dir . $id;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        // Check if image file is a actual image or fake image
-        $check = getimagesize($_FILES["profilepic"]["tmp_name"]);
-        if($check !== false) {
-            move_uploaded_file($_FILES["profilepic"]["tmp_name"], $target_file .".png");
+        $target_file = "static/users/" . $id .".png";
+        if(file_exists($target_file)) {
+            chmod($target_file,0755);
+            unlink($target_file);
         }
+        move_uploaded_file($_FILES["profilepic"]["tmp_name"], $target_file);
     }
 }
 
