@@ -3,6 +3,28 @@
 $output = "";
 $user = "";
 
+function get_id($user)
+{
+    require "db.php";
+
+    //CONNESSIONE AL DB
+    $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
+    $sql = "SELECT id FROM iscrizioni WHERE email=$1;";
+    $prep = pg_prepare($db, "getId", $sql);
+    $ret = pg_execute($db, "getId", array($user));
+    if (!$ret) {
+        echo "ERRORE QUERY: " . pg_last_error($db);
+        return false;
+    } else {
+        if ($row = pg_fetch_assoc($ret)) {
+            $id = $row['id'];
+            return $id;
+        } else {
+            return false;
+        }
+    }
+}
+
 function get_pwd($user)
 {
     require "db.php";
@@ -39,6 +61,7 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
             //Se il login è corretto, inizializziamo la sessione
             session_start();
             $_SESSION['email'] = $user;
+            $_SESSION['id'] = get_id($user);
             //$output =  "<a href=\"reserved.php\">Accedi</a> al contenuto riservato solo agli utenti registrati.";
             header("Location: profilo.php");
         } else {
@@ -65,25 +88,13 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
             </p>
             <?php if($output == "") { ?>
             <form method="post" action="login.php">
-                <p>
-                    <label for="email">Email
-                        <input type="email" name="email" id="email" value="<?php echo $user ?>" />
-                    </label>
-                </p>
-                <p>
-                    <label for="password">Password
-                        <input type="password" name="password" id="password" />
-                    </label>
-                </p>
-                <p>
-                    <input id="bottonelogin" type="submit" name="invia" value="Login" />
-                </p>
-                <input type="checkbox" id='checkbox' name="remember" id ="remember"   /> 
-                              <label for="remember"> Rimani Connesso </label>
-                    
-            </form> <!-- ALLINEARE IL BOX CON LA SCRITTA RIMANI CONNESSO! -->
-
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<?php echo $user ?>" />
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" /> 
+                <button id="bottonelogin" type="submit" name="invia">Login</button>
             <p>Nuovo utente? <a href="registrati.php">Registrati!</a></p>
+            </form>
             <?php } else { ?>
             <p><?php echo $output ?></p>
             <?php } ?>

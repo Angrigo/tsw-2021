@@ -44,15 +44,15 @@ utente int REFERENCES iscrizioni (id)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 1','testooooooo', 1, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 2','testooooooo', 1, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 3','testooooooo', 2, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 4','testooooooo', 2, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 5','testooooooo', 3, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 6','testooooooo', 3, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 7','testooooooo', 3, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 8','testooooooo', 4, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 9','testooooooo', 4, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 1','VAMOS', 1, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 2','VAMOS', 1, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 3','VAMOS', 2, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 4','VAMOS', 2, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 5','VAMOS', 3, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 6','VAMOS', 3, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 7','VAMOS', 3, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 8','VAMOS', 4, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Titolo 9','VAMOS', 4, 1);
 
 
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO www;

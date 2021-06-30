@@ -64,29 +64,15 @@ if (!empty($pass)) {
             <h3>Registrazione</h3>
             </p>
             <form method="post" action="registrati.php" onSubmit="return validaModulo(this);">
-                <p>
-                    <label for="nome">Nome
-                        <input type="text" name="nome" id="nome"/>
-                    </label>
-                </p>
-                <p>
-                    <label for="email">Email
-                        <input type="email" name="email" id="email" />
-                    </label>
-                </p>
-                <p>
-                    <label for="password">Password
-                        <input type="password" name="password" id="password" placeholder="Min. 6 characters"/>
-                    </label>
-                </p>
-                <p>
-                    <label for="repassword">Repassword
-                        <input type="password" name="repassword" id="repassword" placeholder="Min. 6 characters"/>
-                    </label>
-                </p>
-                <p>
-                    <input type="submit" name="invia" value="Registrati" />
-                </p>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome"/>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" />
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Min. 6 characters"/>
+                <label for="repassword">Ripeti passw</label>
+                <input type="password" name="repassword" id="repassword" placeholder="Min. 6 characters"/>
+                <button type="submit" name="invia">Registrati</button>
             </form>
             <p> Sei gi&agrave; registrato? <a href="login.php">Effettua il login!</a></p>
             <?php } else { ?>

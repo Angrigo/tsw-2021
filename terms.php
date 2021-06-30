@@ -16,15 +16,20 @@ ai sensi dell’art. 13 del Regolamento UE 2016/679 ed in relazione alle informa
 tutela delle persone e altri soggetti in materia di trattamento di dati personali, si informa quanto segue:
  <ol>       
 <li> Finalità del Trattamento
-I dati da Lei forniti verranno utilizzati allo scopo e per il fine di </li>
+I dati da Lei forniti verranno utilizzati allo scopo e per il fine di ………………………………………………………………
+…………………………………………………………………………………………………………....………………………</li>
 <li> Modalità del Trattamento
-Le modalità con la quale verranno trattati i dati personali contemplano</li>
+Le modalità con la quale verranno trattati i dati personali contemplano ……………………………………………………
+……………………………………………………………………………………………………………………………………</li>
 <li> Conferimento dei dati
 Il conferimento dei dati per le finalità di cui al punto 1 sono (obbligatori/facoltativi: nel primo caso indicarne il motivo) e
-l’eventuale rifiuto dell’autorizzazione comporta </li>
+l’eventuale rifiuto dell’autorizzazione comporta  ……………………………………</li>
 <li> Comunicazione e diffusione dei dati
-I dati forniti potranno (essere/saranno) comunicati a: ................................................................ . La loro diffusione può
+I dati forniti potranno (essere/saranno) comunicati a: ................................................................ 
+<br>
+ La loro diffusione può
 essere predisposta presso ...............................................................................................
+<br>
 (Se non si prevedono comunicazioni ad altri soggetti né diffusione dei dati inserire: i dati forniti non saranno soggetti a
 comunicazione né a diffusione)</li>
 <li> Titolare del Trattamento
@@ -50,9 +55,12 @@ del trattamento che lo riguardano o di opporsi al loro trattamento, oltre al dir
 prima della revoca;</li>
 <li> proporre reclamo a un’autorità di controllo.
 Può esercitare i Suoi diritti con richiesta scritta inviata a ….., all'indirizzo postale della sede legale o all’indirizzo mail ……
+<br>
 Io sottoscritto/a dichiaro di aver ricevuto l’informativa che precede.
 Luogo, lì ….
+<br>
 Io sottoscritto/a alla luce dell’informativa ricevuta
+<br>
 ◻esprimo il consenso </br>◻NON esprimo il consenso al trattamento dei miei dati personali inclusi quelli considerati come
 categorie particolari di dati.</br>
 ◻esprimo il consenso </br>◻ NON esprimo il consenso alla comunicazione dei miei dati personali d enti pubblici e società di natura
