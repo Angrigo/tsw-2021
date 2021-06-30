@@ -53,7 +53,13 @@ if(isset($_FILES) && isset($_FILES['profilepic'])){
     <?php include("header.php"); ?>
     <div class="content">
         <div class="column_left">
+            
             <h2> Profilo utente </h2>
+            <a href="#" class="notification">
+         <span>Inbox</span>
+         <span class="badge">3</span>
+            </a>
+
         </div>
         <div class="column_middle">
         <h2> Dati utente </h2>
