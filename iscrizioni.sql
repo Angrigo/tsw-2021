@@ -27,14 +27,20 @@ data_creazione TIMESTAMP DEFAULT Now()
 INSERT INTO squadre(nome, immagine) values('Milan','milan.png');
 INSERT INTO squadre(nome, immagine) values('Inter','inter.png');
 INSERT INTO squadre(nome, immagine) values('Roma','roma.png');
+INSERT INTO squadre(nome, immagine) values('Napoli','napoli.png');
 INSERT INTO squadre(nome, immagine) values('Real Madrid','real.png');
 INSERT INTO squadre(nome, immagine) values('Barcellona','barca.png');
+INSERT INTO squadre(nome, immagine) values('Atletico','atletico.png');
+INSERT INTO squadre(nome, immagine) values('Siviglia','siviglia.png');
 INSERT INTO squadre(nome, immagine) values('Bayern Monaco','bayern.png');
 INSERT INTO squadre(nome, immagine) values('Borussia Dortmund','dortmund.png');
-INSERT INTO squadre(nome, immagine) values('Paris Saint-Germain','psg.png');
+INSERT INTO squadre(nome, immagine) values('Lipsia','lipsia.png');
 INSERT INTO squadre(nome, immagine) values('Tottenham Hotspur','tottenham.png');
 INSERT INTO squadre(nome, immagine) values('Manchester City','city.png');
+INSERT INTO squadre(nome, immagine) values('Manchester United','united.png');
+INSERT INTO squadre(nome, immagine) values('Paris Saint-Germain','psg.png');
 INSERT INTO squadre(nome, immagine) values('Losc Lille','lille.png');
+INSERT INTO squadre(nome, immagine) values('Marsiglia','marsiglia.png');
 
 CREATE TABLE recensioni (
 id SERIAL PRIMARY KEY,
@@ -47,18 +53,23 @@ utente int REFERENCES iscrizioni (id)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Hala Madrid','Il Real Madrid è una delle squadre più vincenti in Europa, se non la più vincente. Un club che ha milioni di tifosi in tutto il mondo e che non smette mai di crescere sotto diversi aspetti.', 4, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Barca "Mas que un club"','Il Barca è un club che ha segnato la storia del calcio degli ultimi 20 anni. Un club estremamente legato al territorio della Catalogna', 5, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Hala Madrid','Il Real Madrid è una delle squadre più vincenti in Europa, se non la più vincente. Un club che ha milioni di tifosi in tutto il mondo e che non smette mai di crescere sotto diversi aspetti.', 5, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Barca "Mas que un club"','Il Barca è un club che ha segnato la storia del calcio degli ultimi 20 anni. Un club estremamente legato al territorio della Catalogna', 6, 1);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Milano è Rossonera','Il Milan è il club italiano più vincente in Europa', 1, 1);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Pazza Inter Amala','Internazionale Milano, un club destinato a soccombere sotto il potere e la Gloria della Juventus', 2, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Roma Caput Mundi','La Roma si ama a prescindere', 3, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Bayern Monaco, la richezza della Baviera','Il Bayern Munich è uno dei simbolo della Baviera per la sua gestione sportiva e commerciale efficiente ed oculata', 6, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Borussia Dortmund','Il Bvb è famoso per il calore del suo Stadio, in particolare per il loro famoso "Muro Giallo", ovvero la curva Sud', 7, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Manchester city, il potere dei petroldollari','Il City era un club sconosciuto fino al 2011, diventato una potenza europea dopo essere stato acquistato dallo sceicco Mansour ',10, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Psg','Il club parigino è diventato un club in fortissima espasione sotto gli investimenti dello sceicco del Qatar',8, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Lille','La squadra Francese ha sopreso tutti nel 2021 vincendo a sopresa la Ligue One battendo la corrazzata del PSG', 11, 1);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Spurs','Il club di Londra ha appena costruito uno stadio enorme munito anche di Strip CLub sul tetto dello stadio, esperienza incredibile', 9, 1);
-
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Roma Caput Mundi','La Roma si ama a prescindere', 3, 2);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Bayern Monaco, la ricchezza della Baviera','Il Bayern Munich è uno dei simbolo della Baviera per la sua gestione sportiva e commerciale efficiente ed oculata', 9, 2);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Borussia Dortmund','Il Bvb è famoso per il calore del suo Stadio, in particolare per il loro famoso "Muro Giallo", ovvero la curva Sud', 10, 2);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Manchester city, il potere dei petroldollari','Il City era un club sconosciuto fino al 2011, diventato una potenza europea dopo essere stato acquistato dallo sceicco Mansour ',13, 2);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Psg','Il club parigino è diventato un club in fortissima espasione sotto gli investimenti dello sceicco del Qatar',15, 3);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Lille','La squadra Francese ha sopreso tutti nel 2021 vincendo a sopresa la Ligue One battendo la corrazzata del PSG', 16, 3);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Spurs','Il club di Londra ha appena costruito uno stadio enorme munito anche di Strip CLub sul tetto dello stadio, esperienza incredibile', 12, 3);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Napoli','La squadra di Maradona... :)', 4, 3);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Atletico','La squadra di Simeone fresca vincitrice della Liga 2021', 7, 4);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Siviglia','La squadra dominatrice della Europa League', 8, 4);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Lipsia','Squadra comprata dalla Red Bull e proprio per questo è una delle più odiate in Germania', 11, 4);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Man.United','I Red Deviils è una delle squadre inglesi più titolate, ora in ripresa dopo gli anni deludenti in seguito la partenza del loro manager ventennale Ferguson ', 14, 4);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Marsiglia','Grande squadra storica francese', 17, 4);
 
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO www;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO www;
