@@ -3,13 +3,13 @@
 $output = "";
 $user = "";
 
-function get_id($user)
+function get_user($user)
 {
     require "db.php";
 
     //CONNESSIONE AL DB
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
-    $sql = "SELECT id FROM iscrizioni WHERE email=$1;";
+    $sql = "SELECT id,nome FROM iscrizioni WHERE email=$1;";
     $prep = pg_prepare($db, "getId", $sql);
     $ret = pg_execute($db, "getId", array($user));
     if (!$ret) {
@@ -17,8 +17,7 @@ function get_id($user)
         return false;
     } else {
         if ($row = pg_fetch_assoc($ret)) {
-            $id = $row['id'];
-            return $id;
+            return $row;
         } else {
             return false;
         }
@@ -61,8 +60,9 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
             //Se il login è corretto, inizializziamo la sessione
             session_start();
             $_SESSION['email'] = $user;
-            $_SESSION['id'] = get_id($user);
-            //$output =  "<a href=\"reserved.php\">Accedi</a> al contenuto riservato solo agli utenti registrati.";
+            $row = get_user($user);
+            $_SESSION['id'] = $row["id"];
+            $_SESSION['nome'] = $row["nome"];
             header("Location: profilo.php");
         } else {
             $output = 'Email o password errati. <a href="login.php">Riprova</a>';
@@ -74,7 +74,10 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
 <!DOCTYPE html>
 <html>
 
+<head>
 <?php include("head.php"); ?>
+<script src="valida_modulo_login.js" type="text/javascript"></script>
+</head>
 
 <body>
     <?php include("header.php"); ?>
@@ -82,12 +85,12 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
         <div class="column_left">
             <h2>Login</h2>
         </div>
-        <div class="column_middle">
+        <div class="column_middle titoli">
             <p>
             <h3>Effettua il login</h3>
             </p>
             <?php if($output == "") { ?>
-            <form method="post" action="login.php">
+            <form method="post" action="login.php" onSubmit="return validaModuloLogin(this);">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" value="<?php echo $user ?>" />
                 <label for="password">Password</label>
