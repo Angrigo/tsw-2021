@@ -7,13 +7,13 @@ if(!isset($_SESSION))
 $autenticato = !empty($_SESSION["email"]);
 
 ?>
-<img id="sitelogo" src="./assets/images/logo.png" alt="logo" />
+<a href="index.php"><img id="sitelogo" src="./assets/images/logo.png" alt="logo"></a>
 
 <div class="menu">
     <a href="index.php">Home&nbsp;<i class="fa fa-home"></i></a>
     <a href="news.php">News&nbsp;<i class="fa fa-newspaper-o"></i></a>
     <a href="squadre.php">Squadre&nbsp;<i class="fa fa-futbol-o" aria-hidden="true"></i></i></a>
-    <a href="team.php">Il nostro team&nbsp;<i class="fa fa-users" aria-hidden="true"></i></a>
+    <a href="team.php">Contattaci&nbsp;<i class="fa fa-users" aria-hidden="true"></i></a>
     <?php
     if ($autenticato) {
         echo "<a href='profilo.php'>Profilo &nbsp;<i class='fa fa-user-circle' aria-hidden='true'></i></a>";

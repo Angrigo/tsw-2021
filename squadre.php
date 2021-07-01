@@ -34,7 +34,7 @@ if (!$ret) {
         <div class="column_left">
             
         </div>
-        <div class="column_middle titoli">
+        <div class="column_middle">
             <h2> Squadre </h2>
             <?php 
                 foreach($squadre as $squadra){
@@ -42,7 +42,7 @@ if (!$ret) {
                     echo "<a href='squadra.php?id=". $squadra["id"] ."'>";
                  
                     echo "<div class='card-squadra fadeIn'><p>" . $squadra['nome'] . "</p>
-                    <img class='logo' src='./assets/images/".$squadra["immagine"]."' alt='logo " . $squadra['nome'] . "' />
+                    <img class='logo' onclick='function_confirm()' src='./assets/images/".$squadra["immagine"]."' alt='logo " . $squadra['nome'] . "' />
                     </div>";
                   
                     echo "</a>";
@@ -57,5 +57,6 @@ if (!$ret) {
     </div>
     <?php include("footer.html"); ?>
 </body>
+
 
 </html>

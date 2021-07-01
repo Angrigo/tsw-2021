@@ -85,7 +85,7 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
         <div class="column_left">
             <h2>Login</h2>
         </div>
-        <div class="column_middle titoli">
+        <div class="column_middle">
             <p>
             <h3>Effettua il login</h3>
             </p>

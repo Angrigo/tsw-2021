@@ -5,18 +5,44 @@
 
 <body>
     <?php include("header.php"); ?>
+    
     <div class="content">
         <div class="column_left">
-            <h2>Il nostro team</h2>
+          
         </div>
-        <div class="column_middle titoli">
-
-
-            <p id="terms">Il nostro team è formato da 4 appassionati del giuoco Calcio. </br>
-            In particolare siamo tutti tifosi dell'<strong>AC MILAN!!</strong> 
-            </p>
+        <div class="column_middle">
+        <div id="assistenza">
+            <h2>Contattaci</h2>
+            <p>Per ricevere assistenza non esitare a contattarci!</p>
+        </div>
+  
+        <img id="contattaci" src="assets/images/contattaci.png">
+    
+    
+      <form action="#">
+        <label for="fname">Nome</label>
+        <input type="text" id="fname" name="firstname" placeholder="Il tuo nome">
+        <label for="lname">Cognome</label>
+        <input type="text" id="lname" name="lastname" placeholder="Il tuo cognome">
+        <label for="email"> Email </label>
+        <input type="email" id="email" name="email" placeholder="La tua email">
+        <label for="country">Nazione</label>
+        <select id="country" name="country">
+          <option value="italia">Italia</option>
+          <option value="spagna">Francia</option>
+          <option value="germania">Germania</option>
+          <option value="germania">Francia</option>
+          <option value="germania">Spagna</option>
+          <option value="altro">Altro</option>
+        </select>
+        <label for="subject">Oggetto</label>
+        <textarea id="subject" name="subject" placeholder="Digita il testo qui..." ></textarea>
+		
+        <button id="bottonelogin" type="submit">Invia</button>
+      </form>
         </div>
         <div class="column_right">
+    
 
         </div>
     </div>
