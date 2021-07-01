@@ -21,7 +21,7 @@
 			if (isset($_COOKIE['login'])) { 
 				setcookie($sname,'', time()-3600,'/');
 			}
-			echo "<p> Logout effettuato. Ciao ".$_SESSION["email"]." </p>";
+			echo "<p> Logout effettuato. Ciao ".$_SESSION["nome"]." </p>";
 			echo "<p>Torna alla <a href=\"index.php\">Home</a></p>";
 
 		?>

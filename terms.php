@@ -10,10 +10,11 @@
             <h2>Termini e condizioni</h2>
         </div>
         <div class="column_middle">
-Informativa resa ai sensi degli articoli 13-14 del GDPR 2016/679 (General Data Protection Regulation)
+<p>Informativa resa ai sensi degli articoli 13-14 del GDPR 2016/679 (General Data Protection Regulation)
 Gentile Signore/a,
 ai sensi dell’art. 13 del Regolamento UE 2016/679 ed in relazione alle informazioni di cui si entrerà in possesso, ai fini della
 tutela delle persone e altri soggetti in materia di trattamento di dati personali, si informa quanto segue:
+</p>
  <ol>       
 <li> Finalità del Trattamento
 I dati da Lei forniti verranno utilizzati allo scopo e per il fine di ………………………………………………………………
@@ -55,18 +56,21 @@ del trattamento che lo riguardano o di opporsi al loro trattamento, oltre al dir
 prima della revoca;</li>
 <li> proporre reclamo a un’autorità di controllo.
 Può esercitare i Suoi diritti con richiesta scritta inviata a ….., all'indirizzo postale della sede legale o all’indirizzo mail ……
-<br>
+</ol>
 Io sottoscritto/a dichiaro di aver ricevuto l’informativa che precede.
+<br>
 Luogo, lì ….
-<br>
-Io sottoscritto/a alla luce dell’informativa ricevuta
-<br>
-◻esprimo il consenso </br>◻NON esprimo il consenso al trattamento dei miei dati personali inclusi quelli considerati come
-categorie particolari di dati.</br>
-◻esprimo il consenso </br>◻ NON esprimo il consenso alla comunicazione dei miei dati personali d enti pubblici e società di natura
-privata per le finalità indicate nell’informativa.<br>
-◻esprimo il consenso </br>◻ NON esprimo il consenso al trattamento delle categorie particolari dei miei dati personali così come
-indicati nell’informativa che precede.</li>
+
+<p>
+    Io sottoscritto/a alla luce dell’informativa ricevuta 
+    <br>◻esprimo il consenso<br>◻NON esprimo il consenso al trattamento dei miei dati personali inclusi quelli considerati come
+    categorie particolari di dati.<br>
+    ◻esprimo il consenso <br>◻ NON esprimo il consenso alla comunicazione dei miei dati personali a enti pubblici e società di natura
+    privata per le finalità indicate nell’informativa.<br>
+    ◻esprimo il consenso <br>◻ NON esprimo il consenso al trattamento delle categorie particolari dei miei dati personali così come
+    indicati nell’informativa che precede.
+</p>
+
    </div>
         <div class="column_right">
 

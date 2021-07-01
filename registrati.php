@@ -49,7 +49,7 @@ if (!empty($pass)) {
 
 <head>
 <?php include("head.php"); ?>
-<script src="valida_modulo.js" type="text/javascript"></script>
+<script src="valida_modulo_registrati.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -63,7 +63,7 @@ if (!empty($pass)) {
             <p>
             <h3>Registrazione</h3>
             </p>
-            <form method="post" action="registrati.php" onSubmit="return validaModulo(this);">
+            <form method="post" action="registrati.php" onSubmit="return validaModuloRegistrati(this);">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome"/>
                 <label for="email">Email</label>

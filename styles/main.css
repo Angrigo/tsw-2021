@@ -226,3 +226,22 @@ form button {
     box-shadow: 0 5px #666;
     transform: translateY(-4px);
   }
+
+.redBorder {
+    border: 1px solid red;
+    color: "yellow";
+}
+
+.titoli h1, h2, h3{
+    font-family: 'Lobster', cursive;
+}
+iframe{
+    border: none;
+    overflow: hidden;
+}
+#calciatori{
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+}

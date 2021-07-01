@@ -34,19 +34,19 @@ if (!$ret) {
         <div class="column_left">
             
         </div>
-        <div class="column_middle">
+        <div class="column_middle titoli">
             <h2> Squadre </h2>
             <?php 
                 foreach($squadre as $squadra){
-                    if($autenticato){
-                        echo "<a href='squadra.php?id=". $squadra["id"] ."'>";
-                    }
+                  
+                    echo "<a href='squadra.php?id=". $squadra["id"] ."'>";
+                 
                     echo "<div class='card-squadra fadeIn'><p>" . $squadra['nome'] . "</p>
                     <img class='logo' src='./assets/images/".$squadra["immagine"]."' alt='logo " . $squadra['nome'] . "' />
                     </div>";
-                    if($autenticato){
-                        echo "</a>";
-                    }
+                  
+                    echo "</a>";
+            
                 }
             ?>
 

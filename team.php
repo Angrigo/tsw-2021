@@ -9,7 +9,7 @@
         <div class="column_left">
             <h2>Il nostro team</h2>
         </div>
-        <div class="column_middle">
+        <div class="column_middle titoli">
 
 
             <p id="terms">Il nostro team è formato da 4 appassionati del giuoco Calcio. </br>

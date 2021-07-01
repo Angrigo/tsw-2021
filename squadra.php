@@ -49,8 +49,7 @@ if (!$ret) {
     } 
 }
 
-$sql = "SELECT recensioni.titolo as titolo, recensioni.testo as testo, recensioni.data_creazione as data_rec, iscrizioni.nome as nome 
-FROM recensioni 
+$sql = "SELECT recensioni.titolo as titolo, recensioni.testo as testo, iscrizioni.nome as nome, recensioni.data_creazione as data_rec FROM recensioni 
 JOIN iscrizioni ON iscrizioni.id = recensioni.utente
 WHERE recensioni.squadra=$1 ORDER BY recensioni.data_creazione DESC LIMIT 10";
 $prep = pg_prepare($db, "stmt2", $sql);
