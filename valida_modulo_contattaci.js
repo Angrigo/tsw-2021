@@ -2,7 +2,7 @@ function validaModuloContattaci(nomeModulo) {
     nomeModulo.fname.classList.remove("redBorder");
     nomeModulo.lname.classList.remove("redBorder");
     nomeModulo.email.classList.remove("redBorder");
-    nomeModulo.country.classList.remove("redBorder");
+    nomeModulo.subject.classList.remove("redBorder");
 
     if (nomeModulo.fname.value == "") {
         alert("Inserire il nome!");
@@ -22,16 +22,10 @@ function validaModuloContattaci(nomeModulo) {
         nomeModulo.email.classList.add("redBorder");
         return false;
     }
-    if (nomeModulo.testo.value == "") {
+    if (nomeModulo.subject.value == "") {
         alert("Inserire un testo!");
-        nomeModulo.testo.focus();
-        nomeModulo.testo.classList.add("redBorder");
-        return false;
-    }
-    if (nomeModulo.country.value == "") {
-        alert("Inserire una nazione!");
-        nomeModulo.country.focus();
-        nomeModulo.country.classList.add("redBorder");
+        nomeModulo.subject.focus();
+        nomeModulo.subject.classList.add("redBorder");
         return false;
     }
     

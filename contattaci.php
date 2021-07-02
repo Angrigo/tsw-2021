@@ -20,7 +20,7 @@
         <img id="contattaci" src="assets/images/contattaci.png">
     
     
-      <form id="test" onSubmit="return validaModuloContattaci(this);">
+      <form id="test" action="conferma.php" onSubmit="return validaModuloContattaci(this);">
         <label for="fname">Nome</label>
         <input type="text" id="fname" name="fname" placeholder="Il tuo nome">
         <label for="lname">Cognome</label>
@@ -29,7 +29,7 @@
         <input type="email" id="email" name="email" placeholder="La tua email">
         <label for="country">Nazionalità</label>
         <select id="country" name="country">
-          <option value="italia">Italia</option>
+          <option value="italia" selected>Italia</option>
           <option value="spagna">Francia</option>
           <option value="germania">Germania</option>
           <option value="germania">Francia</option>
@@ -37,7 +37,7 @@
           <option value="altro">Altro</option>
         </select>
         <label for="subject">Oggetto</label>
-        <textarea id="subject" name="subject" placeholder="Digita il testo qui..." ></textarea>
+        <textarea id="subject" name="subject" placeholder="Digita il testo qui..."></textarea>
 
 		
         <button id="bottonelogin" type="submit">Invia</button>

@@ -17,9 +17,9 @@
         </div>
         <div class="column_middle">
 
-            <img class="classifica fadeIn" src="./assets/images/classifica.png"/>
+            <!-- <img class="classifica fadeIn" src="./assets/images/classifica.png"/> -->
              
-            
+            <iframe src="https://sport.sky.it/calcio" width="900" height="1000" sandbox=""></iframe>
          <!--   <iframe class="fadeIn" id="sport" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSerieA%2Fposts%2F1290597521399503&show_text=true&width=500" width="500" height="292"  scrolling="no" frameborder="0" allowfullscreen="true"
                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
          -->
