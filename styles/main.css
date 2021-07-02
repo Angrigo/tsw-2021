@@ -279,7 +279,7 @@ iframe {
     width: 100%;
     border-radius: 10px;
 }
-
+/*
 #contattaci {
     height: auto;
     width: 50%;
@@ -287,6 +287,22 @@ iframe {
     margin-left: auto;
     margin-right: auto;
 }
+*/
+
+#contattaci {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: auto;
+    transition: width 2s, height 4s;
+}
+  
+#contattaci:hover {
+    width: 350px;
+    height: auto;
+  }
+
 
 #subject {
     height: 170px;
@@ -306,12 +322,5 @@ iframe {
     padding-top: 80px;
 }
 
-/*
-#sport {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 40px;
-}
-*/
+
 
