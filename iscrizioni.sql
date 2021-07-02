@@ -8,6 +8,7 @@ id SERIAL PRIMARY KEY,
 nome varchar(50),
 email varchar(100),
 password varchar(200),
+admin boolean,
 data_creazione TIMESTAMP DEFAULT Now() 
 );
 
@@ -15,7 +16,7 @@ INSERT INTO iscrizioni(nome, email, password) values('Ores','ores@test.com', '$2
 INSERT INTO iscrizioni(nome, email, password) values('Gabriele','gabriele@test.com', '$2y$10$M4JVwSnG1IcYcdVyIJwcb.asa6uU8fNFsElvsQFbjFF8dSnSHVAxW');
 INSERT INTO iscrizioni(nome, email, password) values('Marco','marco@test.com', '$2y$10$JTBwzz6U.2NOUXMwRj1zkOvye29RKX/Z5NWCS0tVpitvc89jpSxrK');
 INSERT INTO iscrizioni(nome, email, password) values('Umberto','umberto@test.com', '$2y$10$vGBtQnQbf3GC8ZTpIZanp.QDsgNRFpACSg..t3VoDZXfPY8lxuUaa');
-
+INSERT INTO iscrizioni(nome, email, password) values('Admin','admin@test.com', '1');
 
 CREATE TABLE squadre (
 id SERIAL PRIMARY KEY,
@@ -56,14 +57,17 @@ utente int REFERENCES iscrizioni (id)
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Hala Madrid','Il Real Madrid è una delle squadre più vincenti in Europa, se non la più vincente. Un club che ha milioni di tifosi in tutto il mondo e che non smette mai di crescere sotto diversi aspetti.', 5, 1);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Barca "Mas que un club"','Il Barca è un club che ha segnato la storia del calcio degli ultimi 20 anni. Un club estremamente legato al territorio della Catalogna', 6, 1);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Milano è Rossonera','Il Milan è il club italiano più vincente in Europa', 1, 1);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Super milan','Il Milan ci ha stupiti con le sue ultime prestazioni!', 1, 2);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Milan olè','Vedo tutto rosso-nero', 1, 3);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Forza milan','Forza Milan! Ieri, oggi e domani!!!', 1, 4);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Pazza Inter Amala','Internazionale Milano, un club destinato a soccombere sotto il potere e la Gloria della Juventus', 2, 1);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Roma Caput Mundi','La Roma si ama a prescindere', 3, 2);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Bayern Monaco, la ricchezza della Baviera','Il Bayern Munich è uno dei simbolo della Baviera per la sua gestione sportiva e commerciale efficiente ed oculata', 9, 2);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Borussia Dortmund','Il Bvb è famoso per il calore del suo Stadio, in particolare per il loro famoso "Muro Giallo", ovvero la curva Sud', 10, 2);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Bayern Monaco, la ricchezza della Baviera','Il Bayern Munich è uno dei simboli della Baviera per la sua gestione sportiva e commerciale efficiente ed oculata', 9, 2);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Borussia Dortmund','Il Bvb è famoso per il calore del proprio stadio, in particolare per il loro stupendo "Muro Giallo", ovvero la curva Sud', 10, 2);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Manchester city, il potere dei petroldollari','Il City era un club sconosciuto fino al 2011, diventato una potenza europea dopo essere stato acquistato dallo sceicco Mansour ',13, 2);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Psg','Il club parigino è diventato un club in fortissima espasione sotto gli investimenti dello sceicco del Qatar',15, 3);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Lille','La squadra Francese ha sopreso tutti nel 2021 vincendo a sopresa la Ligue One battendo la corrazzata del PSG', 16, 3);
-INSERT INTO recensioni(titolo, testo,squadra,utente) values('Spurs','Il club di Londra ha appena costruito uno stadio enorme munito anche di Strip CLub sul tetto dello stadio, esperienza incredibile', 12, 3);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Lille','La squadra Francese ha sorpreso tutti nel 2021 vincendo la Ligue One e battendo la concorrenza della corrazzata PSG', 16, 3);
+INSERT INTO recensioni(titolo, testo,squadra,utente) values('Spurs','Il club di Londra ha appena costruito uno stadio costato un investimento di circa 1 Mld, munito perfino di Strip CLub sul tetto, esperienza incredibile', 12, 3);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Napoli','La squadra di Maradona... :)', 4, 3);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Atletico','La squadra di Simeone fresca vincitrice della Liga 2021', 7, 4);
 INSERT INTO recensioni(titolo, testo,squadra,utente) values('Siviglia','La squadra dominatrice della Europa League', 8, 4);

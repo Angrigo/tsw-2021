@@ -1,4 +1,7 @@
 function validaModuloLogin(nomeModulo) {
+    nomeModulo.email.classList.remove("redBorder");
+    nomeModulo.password.classList.remove("redBorder");
+
     if (nomeModulo.email.value == "") {
         alert("Inserire un email!");
         nomeModulo.email.focus();

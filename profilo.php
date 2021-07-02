@@ -1,4 +1,6 @@
 <?php
+include("check_reserved.php");
+
 if(!isset($_SESSION)) 
     session_start();
 $id = 0;

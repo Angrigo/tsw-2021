@@ -71,6 +71,7 @@ if (!$ret) {
 <html>
 
 <?php include("head.php"); ?>
+<script src="valida_modulo_recensione.js" type="text/javascript"></script>
 
 <body>
     <?php include("header.php"); ?>
@@ -86,7 +87,7 @@ if (!$ret) {
             </div>
         <div class="column_middle">
             <h2> Recensioni </h2>
-            <form method="POST" action="squadra.php?id=<?php echo $id ?>">
+            <form method="POST" action="squadra.php?id=<?php echo $id ?>" onSubmit="return validaModuloRecensione(this);">
                 <input type="text" id="titolo" name="titolo" placeholder="Titolo"/>
                 <textarea type="textarea" id="testo" name="testo" placeholder="Testo"></textarea>
                 <button type="submit">Scrivi una nuova recensione</button>

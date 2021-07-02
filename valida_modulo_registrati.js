@@ -1,5 +1,10 @@
 
 function validaModuloRegistrati(nomeModulo) {
+    nomeModulo.nome.classList.remove("redBorder");
+    nomeModulo.email.classList.remove("redBorder");
+    nomeModulo.password.classList.remove("redBorder");
+    nomeModulo.repassword.classList.remove("redBorder");
+
     if (nomeModulo.nome.value == "") {
         alert("Inserire un nome!");
         nomeModulo.nome.focus();

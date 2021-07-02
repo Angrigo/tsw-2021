@@ -20,7 +20,7 @@
                 sulle squadre. Registrandoti, inoltre, si ha la possibilità di aggiugnere nuove recensioni e commenti! Le tue
                 opinioni rendono il nostro blog un posto dove le idee sportive si incrociano con la sana tifoseria.
             </p>
-            <iframe id="videoeuro2020" width="100%" height="400" src="https://www.youtube.com/embed/JjIwYtLr8Ec?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="500px" src="https://www.youtube.com/embed/HiFMBLFzk_U?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
         </div>
         <div class="column_right">
             <img class="home-img fadeIn" id="tiro" src="./assets/images/tiro.png" width="300" height="350"/>
