@@ -17,7 +17,7 @@ $autenticato = !empty($_SESSION["email"]);
     <?php
     if ($autenticato) {
         echo "<a href='profilo.php'>Profilo &nbsp;<i class='fa fa-user-circle' aria-hidden='true'></i></a>";
-        echo "<a href='logout.php'>Esci &nbsp;<i class='fa fa-sign-out' aria-hidden='true'></i></a>";
+        echo "<a href='logout.php'>Logout &nbsp;<i class='fa fa-sign-out' aria-hidden='true'></i></a>";
     } else {
         echo "<a href='login.php'>Login &nbsp;<i class='fa fa-sign-in' aria-hidden='true'></i></a>";
     }
