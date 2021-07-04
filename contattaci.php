@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+
 <?php include("head.php"); ?>
+<script src="valida_modulo_contattaci.js" type="text/javascript"></script>
+
 
 <body>
     <?php include("header.php"); ?>
@@ -20,13 +23,13 @@
         <img id="contattaci" src="assets/images/contattaci.png">
     
     
-      <form id="test" action="conferma.php" onSubmit="return validaModuloContattaci(this);">
+      <form action="conferma.php" onSubmit="return validaModuloContattaci(this);">
         <label for="fname">Nome</label>
-        <input type="text" id="fname" name="fname" placeholder="Il tuo nome">
+        <input type="text" id="fname" name="fname" placeholder="Il tuo nome"/>
         <label for="lname">Cognome</label>
-        <input type="text" id="lname" name="lname" placeholder="Il tuo cognome">
+        <input type="text" id="lname" name="lname" placeholder="Il tuo cognome"/>
         <label for="email"> Email </label>
-        <input type="email" id="email" name="email" placeholder="La tua email">
+        <input type="email" id="email" name="email" placeholder="La tua email"/>
         <label for="country">Nazionalità</label>
         <select id="country" name="country">
           <option value="italia" selected>Italia</option>
@@ -50,6 +53,5 @@
     </div>
     <?php include("footer.html"); ?>
 </body>
-<script src="valida_modulo_contattaci.js" type="text/javascript"></script>
 
 </html>

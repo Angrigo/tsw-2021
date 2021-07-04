@@ -47,10 +47,10 @@ if (!empty($pass)) {
 <!DOCTYPE html>
 <html>
 
-<head>
+
 <?php include("head.php"); ?>
 <script src="valida_modulo_registrati.js" type="text/javascript"></script>
-</head>
+
 
 <body>
     <?php include("header.php"); ?>
