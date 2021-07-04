@@ -75,7 +75,7 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
 <html>
 
 
-<?php include("head.php"); ?>
+<?php include("head.html"); ?>
 <script src="valida_modulo_login.js" type="text/javascript"></script>
 
 

@@ -47,7 +47,7 @@ if(isset($_FILES) && isset($_FILES['profilepic'])){
 <!DOCTYPE html>
 <html>
 
-<?php include("head.php"); ?>
+<?php include("head.html"); ?>
 
 
 

@@ -2,7 +2,7 @@
 <html>
 
 
-<?php include("head.php"); ?>
+<?php include("head.html"); ?>
 <script src="valida_modulo_contattaci.js" type="text/javascript"></script>
 
 

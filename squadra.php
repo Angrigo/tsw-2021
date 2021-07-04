@@ -71,7 +71,7 @@ if (!$ret) {
 <html>
 
 
-<?php include("head.php"); ?>
+<?php include("head.html"); ?>
 <script src="valida_modulo_recensione.js" type="text/javascript"></script>
 
 

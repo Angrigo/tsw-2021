@@ -26,7 +26,7 @@ if (!$ret) {
 <!DOCTYPE html>
 <html>
 
-<?php include("head.php"); ?>
+<?php include("head.html"); ?>
 
 <body>
     <?php include("header.php"); ?>
