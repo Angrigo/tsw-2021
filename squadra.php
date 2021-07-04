@@ -70,8 +70,10 @@ if (!$ret) {
 <!DOCTYPE html>
 <html>
 
+
 <?php include("head.php"); ?>
 <script src="valida_modulo_recensione.js" type="text/javascript"></script>
+
 
 <body>
     <?php include("header.php"); ?>
