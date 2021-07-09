@@ -5,9 +5,9 @@ DROP TABLE IF EXISTS recensioni cascade;
 
 CREATE TABLE iscrizioni(
 id SERIAL PRIMARY KEY,
-nome varchar(50),
-email varchar(100),
-password varchar(200),
+nome varchar(30),
+email varchar(30),
+password varchar(255),
 admin boolean,
 data_creazione TIMESTAMP DEFAULT Now() 
 );

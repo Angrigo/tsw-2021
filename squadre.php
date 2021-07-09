@@ -7,7 +7,7 @@ $autenticato = $_SESSION && $_SESSION["email"];
 
 require "db.php";
 //CONNESSIONE AL DB
-$db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
+$db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
 $sql = "SELECT id, nome, immagine FROM squadre ORDER BY data_creazione DESC";
 if(!$autenticato) 
     $sql = $sql." LIMIT 10";
