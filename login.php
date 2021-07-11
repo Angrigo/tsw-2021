@@ -1,9 +1,9 @@
 <?php
 
 $output = "";
-$user = "";
+$email = "";
 
-function get_user($user)
+function get_email($email)
 {
     require "db.php";
 
@@ -11,7 +11,7 @@ function get_user($user)
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
     $sql = "SELECT id,nome FROM iscrizioni WHERE email=$1;";
     $prep = pg_prepare($db, "getId", $sql);
-    $ret = pg_execute($db, "getId", array($user));
+    $ret = pg_execute($db, "getId", array($email));
     if (!$ret) {
         echo "ERRORE QUERY: " . pg_last_error($db);
         return false;
@@ -24,7 +24,7 @@ function get_user($user)
     }
 }
 
-function get_pwd($user)
+function get_pwd($email)
 {
     require "db.php";
 
@@ -32,7 +32,7 @@ function get_pwd($user)
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
     $sql = "SELECT password FROM iscrizioni WHERE email=$1;";
     $prep = pg_prepare($db, "sqlPassword", $sql);
-    $ret = pg_execute($db, "sqlPassword", array($user));
+    $ret = pg_execute($db, "sqlPassword", array($email));
     if (!$ret) {
         echo "ERRORE QUERY: " . pg_last_error($db);
         return false;
@@ -47,20 +47,20 @@ function get_pwd($user)
 }
 
 if ($_POST && $_POST['email'] && $_POST['password']) {
-    $user =  $_POST['email'];
+    $email =  $_POST['email'];
     $pass =  $_POST['password'];
     //chiama la funzione get_pwd che controlla
     //se email esiste nel DB. Se esiste, restituisce la password (hash), altrimenti restituisce false.
-    $hash = get_pwd($user);
+    $hash = get_pwd($email);
     if (!$hash) {
-        $output = "L'utente $user non esiste. <a href=\"login.php\">Riprova</a>";
+        $output = "L'email $email non esiste. <a href=\"login.php\">Riprova</a>";
     } else {
         if (password_verify($pass, $hash)) {
             $output = "Login Eseguito con successo";
             //Se il login è corretto, inizializziamo la sessione
             session_start();
-            $_SESSION['email'] = $user;
-            $row = get_user($user);
+            $_SESSION['email'] = $email;
+            $row = get_email($email);
             $_SESSION['id'] = $row["id"];
             $_SESSION['nome'] = $row["nome"];
             header("Location: profilo.php");
@@ -92,7 +92,7 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
             <?php if($output == "") { ?>
             <form method="post" action="login.php" onSubmit="return validaModuloLogin(this);">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" value="<?php echo $user ?>" />
+                <input type="email" name="email" id="email" value="<?php echo $email ?>" />
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" /> 
                 <button id="bottonelogin" type="submit" name="invia">Login</button>
