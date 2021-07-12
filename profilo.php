@@ -30,17 +30,18 @@ if (!$ret) {
     }
 }
 
-if(isset($_FILES) && isset($_FILES['profilepic'])){
-    if(is_uploaded_file($_FILES['profilepic']['tmp_name'])){
-        $target_file = "static/users/" . $id .".png";
-        if(file_exists($target_file)) {
-            chmod($target_file,0755);
-            unlink($target_file);
+if($id){ // controllo l'esistenza dell'id dell'utente
+    if(isset($_FILES) && isset($_FILES['profilepic'])){ // controllo esistenza del file
+        if(is_uploaded_file($_FILES['profilepic']['tmp_name'])){ // controllo se il file è stato caricato
+            $target_file = "static/users/" . $id .".png"; // compongo la stringa del path file da salvare
+            if(file_exists($target_file)) { // controllo se il file esiste già, se esiste lo elimino
+                chmod($target_file,0755); //modifico i permessi per il file
+                unlink($target_file); // elimino il file
+            }
+            move_uploaded_file($_FILES["profilepic"]["tmp_name"], $target_file); //prendo il file e lo metto nell path prefissato dall'id dell'utente
         }
-        move_uploaded_file($_FILES["profilepic"]["tmp_name"], $target_file);
     }
 }
-
 
 ?>
 
@@ -49,16 +50,11 @@ if(isset($_FILES) && isset($_FILES['profilepic'])){
 
 <?php include("head.html"); ?>
 
-
-
 <body>
     <?php include("header.php"); ?>
     <div class="content">
         <div class="column_left">
-            
             <h2> Profilo utente </h2>
-            
-
         </div>
         <div class="column_middle">
         <h2> Dati utente </h2>

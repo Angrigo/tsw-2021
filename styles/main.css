@@ -49,8 +49,6 @@ body {
     text-align: center;
     padding: 10px 60px;
     line-height: 50px;
-    /* transition: cubic-bezier(0.25, 0.46, 0.45, 0.94); */
-    /* transition: ease-in-out 100ms 100ms; */
 }
 
 .menu a:hover {
@@ -72,7 +70,19 @@ h2 {
     text-decoration: underline;
 }
 
+@media only screen and (max-width: 900px) {
+    .column_left {
+        display: none;
+    }
+    
+    .column_right {
+        display: none;
+    }
 
+    .column_middle {
+        width: 100% !important;
+    }
+}
 
 .column_left {
     width: 20%;
@@ -121,7 +131,6 @@ input, select, textarea {
 }
 
 #intro_text {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: large;
     font-style: italic;
 }
@@ -132,21 +141,6 @@ input, select, textarea {
     width: 100%;
     border-radius: 10px;
 }
-/*
-.home-img {
-    border-radius: 5px;
-    width: 300px;
-    height: 300px;
-    transition: width 2s, height 2s, transform 2s;
-}
-  
-  .home-img:hover {
-    width: 320px;
-    height: 320px;
-    transform: rotate(360deg);
-  }
-  */
-
 
 .home-img {
     border-radius: 5px;
@@ -155,11 +149,10 @@ input, select, textarea {
     transition: width 2s, height 4s;
 }
   
-  .home-img:hover {
+.home-img:hover {
     width: 320px;
     height: 320px;
-  }
-
+}
 
 .fadeIn {
 	opacity: 1;
@@ -195,14 +188,10 @@ input, select, textarea {
     padding: 10px;
     padding-bottom: 20px;
     width: fit-content;
-    /* 
-    border-radius: 15px;
-    background-color: rgb(17,84,127);
-    border: 1px solid black; 
-    */
     color: black;
     transition: all 300ms 100ms;
 }
+
 .card-squadra:hover {
     background-color: #D7D7D7;
     transform: translateY(5px);
@@ -261,32 +250,22 @@ form button {
     outline: none;
 }
 
-/*
-.titoli h1, h2, h3{
-    font-family: 'Lobster',cursive;
-}
-*/
-
 iframe {
     border: none;
     overflow: hidden;
 }
 
-#calciatori {
+.calciatori {
     min-height: 300px;
     height: auto;
     width: 100%;
     border-radius: 10px;
+    transition: all 300ms;
 }
-/*
-#contattaci {
-    height: auto;
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+
+.calciatori:hover {
+    transform: scale(1.2);
 }
-*/
 
 #contattaci {
     display: block;
@@ -300,8 +279,7 @@ iframe {
 #contattaci:hover {
     width: 350px;
     height: auto;
-  }
-
+}
 
 #subject {
     height: 170px;

@@ -8,7 +8,7 @@ function get_email($email)
     require "db.php";
 
     //CONNESSIONE AL DB
-    $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
+    $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
     $sql = "SELECT id,nome FROM iscrizioni WHERE email=$1;";
     $prep = pg_prepare($db, "getId", $sql);
     $ret = pg_execute($db, "getId", array($email));
@@ -29,7 +29,7 @@ function get_pwd($email)
     require "db.php";
 
     //CONNESSIONE AL DB
-    $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
+    $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
     $sql = "SELECT password FROM iscrizioni WHERE email=$1;";
     $prep = pg_prepare($db, "sqlPassword", $sql);
     $ret = pg_execute($db, "sqlPassword", array($email));
@@ -49,8 +49,8 @@ function get_pwd($email)
 if ($_POST && $_POST['email'] && $_POST['password']) {
     $email =  $_POST['email'];
     $pass =  $_POST['password'];
-    //chiama la funzione get_pwd che controlla
-    //se email esiste nel DB. Se esiste, restituisce la password (hash), altrimenti restituisce false.
+    //chiama la funzione get_pwd che controlla se email esiste nel DB. 
+    //Se esiste, restituisce la password (hash), altrimenti restituisce false.
     $hash = get_pwd($email);
     if (!$hash) {
         $output = "L'email $email non esiste. <a href=\"login.php\">Riprova</a>";
@@ -74,10 +74,8 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
 <!DOCTYPE html>
 <html>
 
-
 <?php include("head.html"); ?>
 <script src="valida_modulo_login.js" type="text/javascript"></script>
-
 
 <body>
     <?php include("header.php"); ?>
@@ -90,13 +88,13 @@ if ($_POST && $_POST['email'] && $_POST['password']) {
             <h3>Effettua il login</h3>
             </p>
             <?php if($output == "") { ?>
-            <form method="post" action="login.php" onSubmit="return validaModuloLogin(this);">
+            <form method="post" action="login.php" onsubmit="return validaModuloLogin(this);">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" value="<?php echo $email ?>" />
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" /> 
                 <button id="bottonelogin" type="submit" name="invia">Login</button>
-            <p>Nuovo utente? <a href="registrati.php">Registrati!</a></p>
+                <p>Nuovo utente? <a href="registrati.php">Registrati!</a></p>
             </form>
             <?php } else { ?>
             <p><?php echo $output ?></p>

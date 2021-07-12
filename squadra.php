@@ -89,7 +89,7 @@ if (!$ret) {
             </div>
         <div class="column_middle">
             <h2> Recensioni </h2>
-            <form method="POST" action="squadra.php?id=<?php echo $id ?>" onSubmit="return validaModuloRecensione(this);">
+            <form method="POST" action="squadra.php?id=<?php echo $id ?>" onsubmit="return validaModuloRecensione(this);">
                 <input type="text" id="titolo" name="titolo" placeholder="Titolo"/>
                 <textarea type="textarea" id="testo" name="testo" placeholder="Testo"></textarea>
                 <button type="submit">Scrivi una nuova recensione</button>

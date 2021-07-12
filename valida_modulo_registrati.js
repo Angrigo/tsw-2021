@@ -47,7 +47,7 @@ function validaModuloRegistrati(nomeModulo) {
     if (nomeModulo.repassword.value != nomeModulo.password.value) {
         alert("Le password non coincidono!");
         nomeModulo.password.focus();
-        //nomeModulo.password.select();
+        nomeModulo.password.select();
         nomeModulo.password.classList.add("redBorder");
         nomeModulo.repassword.classList.add("redBorder");
         return false;

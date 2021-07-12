@@ -1,7 +1,6 @@
 <?php
 
-if(!isset($_SESSION)) 
-{ 
+if(!isset($_SESSION)) { 
     session_start(); 
 } 
 $autenticato = !empty($_SESSION["email"]);

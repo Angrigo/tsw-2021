@@ -41,12 +41,12 @@ if (!$ret) {
                   
                     echo "<a href='squadra.php?id=". $squadra["id"] ."'>";
                  
-                    echo "<div class='card-squadra fadeIn'><p>" . $squadra['nome'] . "</p>
-                    <img class='logo' onclick='function_confirm()' src='./assets/images/".$squadra["immagine"]."' alt='logo " . $squadra['nome'] . "' />
-                    </div>";
+                    echo "<div class='card-squadra fadeIn'>
+                            <p>" . $squadra['nome'] . "</p>
+                             <img class='logo' onclick='function_confirm()' src='./assets/images/".$squadra["immagine"]."' alt='logo " . $squadra['nome'] . "' />
+                        </div>";
                   
                     echo "</a>";
-            
                 }
             ?>
 

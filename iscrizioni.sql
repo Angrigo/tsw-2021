@@ -8,15 +8,14 @@ id SERIAL PRIMARY KEY,
 nome varchar(30),
 email varchar(30),
 password varchar(255),
-admin boolean,
 data_creazione TIMESTAMP DEFAULT Now() 
 );
 
-INSERT INTO iscrizioni(nome, email, password) values('Ores','ores@test.com', '$2y$10$eo.hrM4ke.IwWr5N4vayWu8W9QAs3NM/eQhQJwTZqgbtklsFGLbI.');
-INSERT INTO iscrizioni(nome, email, password) values('Gabriele','gabriele@test.com', '$2y$10$M4JVwSnG1IcYcdVyIJwcb.asa6uU8fNFsElvsQFbjFF8dSnSHVAxW');
-INSERT INTO iscrizioni(nome, email, password) values('Marco','marco@test.com', '$2y$10$JTBwzz6U.2NOUXMwRj1zkOvye29RKX/Z5NWCS0tVpitvc89jpSxrK');
-INSERT INTO iscrizioni(nome, email, password) values('Umberto','umberto@test.com', '$2y$10$vGBtQnQbf3GC8ZTpIZanp.QDsgNRFpACSg..t3VoDZXfPY8lxuUaa');
-INSERT INTO iscrizioni(nome, email, password) values('Admin','admin@test.com', '1');
+INSERT INTO iscrizioni(nome, email, password) values('Ores','ores@test.com', '$2y$10$eo.hrM4ke.IwWr5N4vayWu8W9QAs3NM/eQhQJwTZqgbtklsFGLbI.'); -- password: angione
+INSERT INTO iscrizioni(nome, email, password) values('Gabriele','gabriele@test.com', '$2y$10$M4JVwSnG1IcYcdVyIJwcb.asa6uU8fNFsElvsQFbjFF8dSnSHVAxW'); -- password: angrisani
+INSERT INTO iscrizioni(nome, email, password) values('Marco','marco@test.com', '$2y$10$JTBwzz6U.2NOUXMwRj1zkOvye29RKX/Z5NWCS0tVpitvc89jpSxrK'); -- password: cavezza
+INSERT INTO iscrizioni(nome, email, password) values('Umberto','umberto@test.com', '$2y$10$vGBtQnQbf3GC8ZTpIZanp.QDsgNRFpACSg..t3VoDZXfPY8lxuUaa'); -- password: ferrara
+INSERT INTO iscrizioni(nome, email, password) values('Antonio','a.greco@test.com', '$2y$10$KmBTW4lDoCl12P.LjR2q1e/ZxivPfXa7r0do0ugPlWkDMF6UCFZvO'); -- password: a.greco
 
 CREATE TABLE squadre (
 id SERIAL PRIMARY KEY,

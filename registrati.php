@@ -1,5 +1,4 @@
 <?php
-
 $output = "";
 
 if (isset($_POST['nome']))
@@ -26,14 +25,12 @@ if (!empty($pass)) {
         $output = "Hai sbagliato a digitare la password. <a href='registrati.php'>Riprova!</a>";
         $pass = "";
     } else {
-        //ANDREBBERO INSERITI ANCHE I CONTROLLI DEGLI ALTRI VALORI OBBLIGATORI
-        //....
 
-        //CONTROLLO SE L'UTENTE GIA' ESISTE
+        //CONTROLLO SE L'EMAIL DELL'UTENTE GIA' ESISTE
         if (email_exist($email)) {
             $output = "Email $email già esistente. <a href=\"registrati.php\">Riprova</a>";
         } else {
-            //ORA posso inserire il nuovo utente nel db
+            //ORA si può inserire il nuovo utente nel db
             if (insert_utente($nome, $email, $pass)) {
                 $output = "Utente registrato con successo. <a href='login.php'>Effettua il login!</a>";
             } else {
@@ -42,8 +39,8 @@ if (!empty($pass)) {
         }
     }
 }
-
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -63,7 +60,7 @@ if (!empty($pass)) {
             <p>
             <h3>Registrazione</h3>
             </p>
-            <form method="post" action="registrati.php" onSubmit="return validaModuloRegistrati(this);">
+            <form method="post" action="registrati.php" onsubmit="return validaModuloRegistrati(this);">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Il tuo nome"/>
                 <label for="email">Email</label>
@@ -112,7 +109,6 @@ function email_exist($email)
     require "./db.php";
     //CONNESSIONE AL DB
     $db = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
-    //echo "Connessione al database riuscita<br/>"; 
     $sql = "SELECT email FROM iscrizioni WHERE email=$1";
     $prep = pg_prepare($db, "sqlEmail", $sql);
     $ret = pg_execute($db, "sqlEmail", array($email));
@@ -133,7 +129,6 @@ function insert_utente($nome, $email, $pass)
     require "./db.php";
     //CONNESSIONE AL DB
     $db = pg_connect($connection_string) or die('Impossibile connetersi al database: ' . pg_last_error());
-    //echo "Connessione al database riuscita<br/>"; 
     $hash = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO iscrizioni(id, nome, email, password) VALUES(DEFAULT, $1, $2, $3)";
     $prep = pg_prepare($db, "insertEmail", $sql);

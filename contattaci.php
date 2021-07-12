@@ -23,7 +23,7 @@
         <img id="contattaci" src="assets/images/contattaci.png">
     
     
-      <form action="conferma.php" onSubmit="return validaModuloContattaci(this);">
+      <form action="conferma.php" onsubmit="return validaModuloContattaci(this);">
         <label for="fname">Nome</label>
         <input type="text" id="fname" name="fname" placeholder="Il tuo nome"/>
         <label for="lname">Cognome</label>
